@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1820721D03868C00FFEAD0 /* blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1820711D03868C00FFEAD0 /* blur.swift */; };
 		3AC251361D020CE000B1533E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251351D020CE000B1533E /* AppDelegate.swift */; };
 		3AC251381D020CE000B1533E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251371D020CE000B1533E /* ViewController.swift */; };
 		3AC2513B1D020CE000B1533E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC251391D020CE000B1533E /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		3AC251771D020CE100B1533E /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251761D020CE100B1533E /* GlanceController.swift */; };
 		3AC251791D020CE100B1533E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251781D020CE100B1533E /* ComplicationController.swift */; };
 		3AC2517B1D020CE100B1533E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC2517A1D020CE100B1533E /* Assets.xcassets */; };
+		3AC251921D020D0100B1533E /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251911D020D0100B1533E /* Notes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A1820711D03868C00FFEAD0 /* blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blur.swift; sourceTree = "<group>"; };
 		3AC251321D020CE000B1533E /* weatherwear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherwear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC251351D020CE000B1533E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC251371D020CE000B1533E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		3AC251781D020CE100B1533E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3AC2517A1D020CE100B1533E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC2517C1D020CE100B1533E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC251911D020D0100B1533E /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,14 +147,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A18206E1D0354E100FFEAD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3A18206F1D03554700FFEAD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AC251391D020CE000B1533E /* Main.storyboard */,
+				3AC2513E1D020CE100B1533E /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3A1820701D03555600FFEAD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AC251371D020CE000B1533E /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		3AC251291D020CE000B1533E = {
 			isa = PBXGroup;
 			children = (
 				3AC251341D020CE000B1533E /* weatherwear */,
-				3AC251491D020CE100B1533E /* weatherwearTests */,
-				3AC251541D020CE100B1533E /* weatherwearUITests */,
 				3AC2515E1D020CE100B1533E /* weatherwear WatchKit App */,
 				3AC2516D1D020CE100B1533E /* weatherwear WatchKit Extension */,
+				3AC251491D020CE100B1533E /* weatherwearTests */,
+				3AC251541D020CE100B1533E /* weatherwearUITests */,
 				3AC251331D020CE000B1533E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,11 +198,12 @@
 		3AC251341D020CE000B1533E /* weatherwear */ = {
 			isa = PBXGroup;
 			children = (
+				3A1820701D03555600FFEAD0 /* Controller */,
+				3A18206F1D03554700FFEAD0 /* View */,
+				3A18206E1D0354E100FFEAD0 /* Model */,
+				3AC251901D020CF100B1533E /* Util */,
 				3AC251351D020CE000B1533E /* AppDelegate.swift */,
-				3AC251371D020CE000B1533E /* ViewController.swift */,
-				3AC251391D020CE000B1533E /* Main.storyboard */,
 				3AC2513C1D020CE000B1533E /* Assets.xcassets */,
-				3AC2513E1D020CE100B1533E /* LaunchScreen.storyboard */,
 				3AC251411D020CE100B1533E /* Info.plist */,
 			);
 			path = weatherwear;
@@ -229,6 +258,15 @@
 				3AC2516F1D020CE100B1533E /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AC251901D020CF100B1533E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3AC251911D020D0100B1533E /* Notes.swift */,
+				3A1820711D03868C00FFEAD0 /* blur.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +468,8 @@
 			files = (
 				3AC251381D020CE000B1533E /* ViewController.swift in Sources */,
 				3AC251361D020CE000B1533E /* AppDelegate.swift in Sources */,
+				3A1820721D03868C00FFEAD0 /* blur.swift in Sources */,
+				3AC251921D020D0100B1533E /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +709,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.drewwestcott.weatherwear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -680,6 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.drewwestcott.weatherwear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -748,6 +790,7 @@
 				3AC251811D020CE100B1533E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AC251831D020CE100B1533E /* Build configuration list for PBXNativeTarget "weatherwear WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -756,6 +799,7 @@
 				3AC251851D020CE100B1533E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AC251871D020CE100B1533E /* Build configuration list for PBXNativeTarget "weatherwear" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +808,7 @@
 				3AC251891D020CE100B1533E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AC2518A1D020CE100B1533E /* Build configuration list for PBXNativeTarget "weatherwearTests" */ = {
 			isa = XCConfigurationList;
@@ -772,6 +817,7 @@
 				3AC2518C1D020CE100B1533E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AC2518D1D020CE100B1533E /* Build configuration list for PBXNativeTarget "weatherwearUITests" */ = {
 			isa = XCConfigurationList;
@@ -780,6 +826,7 @@
 				3AC2518F1D020CE100B1533E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
