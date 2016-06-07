@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
+    
+    //api.openweathermap.org/data/2.5/weather?lat=50.8185081&lon=-1.0880&APPID=f1bf763bc9d0c2a6374722d80fd8e9b4
+    let baseURL = "http://api.openweathermap.org/data/2.5/"
+    let apiKey = "f1bf763bc9d0c2a6374722d80fd8e9b4"
 
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var windSpeedLabel: UILabel!
@@ -31,6 +36,8 @@ class ViewController: UIViewController {
 //        blurEffectView.contentView.addSubview(vibrancyEffectView)
 
         background.addSubview(blurEffectView)
+        
+        updateCurrentWeather("-1.0880", latitude: "50.81850")
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,5 +46,17 @@ class ViewController: UIViewController {
     }
 
 
+    func updateCurrentWeather(longitude: String, latitude: String) {
+        
+        let locationURL = "\(baseURL)weather?lat=\(longitude)&lon=\(latitude)&APPID=\(apiKey)"
+        let url = NSURL(string: locationURL)!
+        
+        Alamofire.request(.GET, url).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+        }
+    }
 }
 
