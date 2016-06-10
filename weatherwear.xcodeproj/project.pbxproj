@@ -29,6 +29,8 @@
 		3AC251791D020CE100B1533E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251781D020CE100B1533E /* ComplicationController.swift */; };
 		3AC2517B1D020CE100B1533E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC2517A1D020CE100B1533E /* Assets.xcassets */; };
 		3AC251921D020D0100B1533E /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC251911D020D0100B1533E /* Notes.swift */; };
+		3AF970071D0B1FD000CCB2C9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF970061D0B1FD000CCB2C9 /* Weather.swift */; };
+		3AF970091D0B20EE00CCB2C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF970081D0B20EE00CCB2C9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		3AC2517A1D020CE100B1533E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC2517C1D020CE100B1533E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC251911D020D0100B1533E /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		3AF970061D0B1FD000CCB2C9 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		3AF970081D0B20EE00CCB2C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6DDF96883A8F358E568B7FB8 /* Pods-weatherwear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherwear.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherwear/Pods-weatherwear.release.xcconfig"; sourceTree = "<group>"; };
 		73ED30D91D2C7DEC67405C04 /* Pods_weatherwear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherwear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 		3A18206E1D0354E100FFEAD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3AF970061D0B1FD000CCB2C9 /* Weather.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,9 +234,10 @@
 		3AC251341D020CE000B1533E /* weatherwear */ = {
 			isa = PBXGroup;
 			children = (
-				3A1820701D03555600FFEAD0 /* Controller */,
-				3A18206F1D03554700FFEAD0 /* View */,
 				3A18206E1D0354E100FFEAD0 /* Model */,
+				3A18206F1D03554700FFEAD0 /* View */,
+				3A1820701D03555600FFEAD0 /* Controller */,
+				3AF9700A1D0B213800CCB2C9 /* Notes */,
 				3AC251901D020CF100B1533E /* Util */,
 				3AC251351D020CE000B1533E /* AppDelegate.swift */,
 				3AC2513C1D020CE000B1533E /* Assets.xcassets */,
@@ -294,10 +300,18 @@
 		3AC251901D020CF100B1533E /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3AC251911D020D0100B1533E /* Notes.swift */,
 				3A1820711D03868C00FFEAD0 /* blur.swift */,
+				3AF970081D0B20EE00CCB2C9 /* Constants.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		3AF9700A1D0B213800CCB2C9 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				3AC251911D020D0100B1533E /* Notes.swift */,
+			);
+			name = Notes;
 			sourceTree = "<group>";
 		};
 		9D80616C155860604EF8AF11 /* Pods */ = {
@@ -562,6 +576,8 @@
 				3AC251361D020CE000B1533E /* AppDelegate.swift in Sources */,
 				3A1820721D03868C00FFEAD0 /* blur.swift in Sources */,
 				3AC251921D020D0100B1533E /* Notes.swift in Sources */,
+				3AF970071D0B1FD000CCB2C9 /* Weather.swift in Sources */,
+				3AF970091D0B20EE00CCB2C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +680,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: drew.westcott@me.com (68374CG8BP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -710,6 +727,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: drew.westcott@me.com (68374CG8BP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -765,11 +783,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = weatherwear_WatchKit_Extension;
 				INFOPLIST_FILE = "weatherwear WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.drewwestcott.weatherwear.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -781,11 +802,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = weatherwear_WatchKit_Extension;
 				INFOPLIST_FILE = "weatherwear WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.drewwestcott.weatherwear.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

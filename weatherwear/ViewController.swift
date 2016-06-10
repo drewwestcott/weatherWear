@@ -11,14 +11,11 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    //api.openweathermap.org/data/2.5/weather?lat=50.8185081&lon=-1.0880&APPID=f1bf763bc9d0c2a6374722d80fd8e9b4
-    let baseURL = "http://api.openweathermap.org/data/2.5/"
-    let apiKey = "f1bf763bc9d0c2a6374722d80fd8e9b4"
-
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var barometerLabel: UILabel!
-    
+    @IBOutlet weak var placeLabel: UILabel!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,31 +29,28 @@ class ViewController: UIViewController {
         let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
         vibrancyEffectView.frame = view.bounds
         
-//        vibrancyEffectView.contentView.addSubview(barometerLabel)
-//        blurEffectView.contentView.addSubview(vibrancyEffectView)
+        //vibrancyEffectView.contentView.addSubview(barometerLabel)
+        //blurEffectView.contentView.addSubview(vibrancyEffectView)
 
         background.addSubview(blurEffectView)
         
-        updateCurrentWeather("-1.0880", latitude: "50.81850")
+        let weather = WeatherReport(longitude: "-1.0880", latitude: "50.81850")
+        print("Report requested")
+        weather.updateCurrentWeather { () -> () in
+            self.updateUI()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    func updateCurrentWeather(longitude: String, latitude: String) {
-        
-        let locationURL = "\(baseURL)weather?lat=\(longitude)&lon=\(latitude)&APPID=\(apiKey)"
-        let url = NSURL(string: locationURL)!
-        
-        Alamofire.request(.GET, url).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-        }
+    
+    func updateUI() {
+        print("Weather returned")
+        windSpeedLabel.text = "4.94 SW"
     }
+
 }
 
