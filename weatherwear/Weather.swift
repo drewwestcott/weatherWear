@@ -32,7 +32,7 @@ class WeatherReport {
     
     func updateCurrentWeather(completed: DownloadComplete) {
         
-        print("reached update function")
+        print("Reached update function")
         let locationURL = "\(baseURL)weather?lat=\(self._latitude)&lon=\(self._longitude)&APPID=\(apiKey)"
         let url = NSURL(string: locationURL)!
         
@@ -43,7 +43,7 @@ class WeatherReport {
                 
                 if let place = dict["name"] as? String {
                     self._place = place
-                    print(place)
+                    print("Inside request:\(place)")
                 } else {
                     self._place = "Location Unavailable"
                 }

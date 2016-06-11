@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        print("Weather returned")
+        print("updateUI called")
         windSpeedLabel.text = "4.94 SW"
     }
 
