@@ -9,6 +9,8 @@
 // Sunglasses by Iconic from the Noun Project
 // Scarf By Erickson Araujo, BR
 // Jacket by Toni Valdés Medina from the Noun Project
+// Barometer, Sunrise/set Moonrise/set by anbileru adaleru from the Noun Project
+// 
 //
 // Return from API
 //{

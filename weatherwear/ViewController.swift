@@ -12,10 +12,14 @@ import Alamofire
 class ViewController: UIViewController {
     
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var accessoryImage: UIImageView!
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var barometerLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
-        
+    @IBOutlet weak var updatedLabel: UILabel!
+    
+    var weather: WeatherReport!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
 
         background.addSubview(blurEffectView)
         
-        let weather = WeatherReport(longitude: "-1.0880", latitude: "50.81850")
+        weather = WeatherReport(longitude: "-1.0880", latitude: "50.81850")
         print("Report requested")
         weather.updateCurrentWeather { () -> () in
             self.updateUI()
@@ -49,7 +53,26 @@ class ViewController: UIViewController {
     
     func updateUI() {
         print("updateUI called")
-        windSpeedLabel.text = "4.94 SW"
+        placeLabel.text = weather.place
+        windSpeedLabel.text = "\(weather.windSpeed) 🎏"
+        if weather.pressure != -1 {
+            barometerLabel.text = "\(weather.pressure) 🕰"
+            barometerLabel.hidden = false
+        } else {
+            barometerLabel.hidden = true
+        }
+        
+        switch weather.accessory {
+        case .umbrella:
+            print("Need an umbrella")
+            accessoryImage.image = UIImage(named: "umbrella")
+        default:
+            print("Sun glasses or just a smile")
+            accessoryImage.image = UIImage(named: "glasses")
+        }
+        let updatedAt = NSDate()
+        let updatedAndFormatted = NSDateFormatter.localizedStringFromDate(updatedAt, dateStyle: .NoStyle, timeStyle: .ShortStyle)
+        updatedLabel.text = updatedAndFormatted
     }
 
 }

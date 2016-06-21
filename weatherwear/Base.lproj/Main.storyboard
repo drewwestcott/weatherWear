@@ -38,9 +38,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-qs-gJP">
-                                <rect key="frame" x="16" y="626" width="52" height="21"/>
+                                <rect key="frame" x="16" y="626" width="100" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="IZT-rt-aqm"/>
+                                    <constraint firstAttribute="width" constant="100" id="IZT-rt-aqm"/>
                                     <constraint firstAttribute="height" constant="21" id="znp-s2-3D5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -66,15 +66,27 @@
                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated: 15:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D27-9w-WTK">
+                                <rect key="frame" x="16" y="641" width="166" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="DgO-q4-FIG"/>
+                                    <constraint firstAttribute="height" constant="21" id="pib-mV-2rM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                <color key="textColor" red="0.21826923076923077" green="0.21826923076923077" blue="0.21826923076923077" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="D27-9w-WTK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="46P-qr-GOq"/>
                             <constraint firstItem="wPL-lH-1eW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ER8-21-OEg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="epS-Tr-J49" secondAttribute="bottom" constant="20" id="Jei-wa-tip"/>
                             <constraint firstItem="fHW-qs-gJP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ldt-x9-MZu"/>
                             <constraint firstItem="BXh-qM-NyT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="OzS-ob-6hF"/>
                             <constraint firstItem="GBJ-uu-KZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCk-C4-340"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wPL-lH-1eW" secondAttribute="bottom" id="UCy-oV-tss"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D27-9w-WTK" secondAttribute="bottom" constant="5" id="UrL-Vz-X10"/>
                             <constraint firstItem="wPL-lH-1eW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zdx-1E-lSN"/>
                             <constraint firstItem="fHW-qs-gJP" firstAttribute="top" secondItem="Yhl-Qr-X6F" secondAttribute="bottom" constant="30" id="ckM-S9-JTZ"/>
                             <constraint firstItem="epS-Tr-J49" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="d6R-Do-gfh"/>
@@ -94,9 +106,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="accessoryImage" destination="BXh-qM-NyT" id="Sxc-MM-aCE"/>
                         <outlet property="background" destination="wPL-lH-1eW" id="jnP-vg-VB4"/>
                         <outlet property="barometerLabel" destination="epS-Tr-J49" id="LbI-Qg-GEc"/>
                         <outlet property="placeLabel" destination="Yhl-Qr-X6F" id="2PO-cP-dru"/>
+                        <outlet property="updatedLabel" destination="D27-9w-WTK" id="bNP-iv-6p2"/>
                         <outlet property="windSpeedLabel" destination="fHW-qs-gJP" id="z1T-wx-kSo"/>
                     </connections>
                 </viewController>
